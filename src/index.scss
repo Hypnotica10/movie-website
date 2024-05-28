@@ -3,9 +3,34 @@
 @tailwind utilities;
 
 @layer base {
-  
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans overflow-x-hidden;
+  }
 }
 
 @layer components {
-  
+  .form-container {
+    perspective: 1000px;
+  }
+
+  .form {
+    transform-style: preserve-3d;
+  }
+
+  .form.active {
+    transform: rotateY(180deg);
+  }
+
+  .login-form,
+  .signup-form {
+    backface-visibility: hidden;
+  }
+
+  .signup-form {
+    transform: rotateY(180deg);
+  }
 }
